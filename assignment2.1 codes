@@ -1,0 +1,202 @@
+Ans a:- 
+      class Acad     //class
+     {
+       public static void main(String []args)  //main method
+       {
+         int a=25;
+         int b = 654;
+         int sum = a+b;      //sum of two number
+         System.out.println(sum);
+         }
+       }
+
+Ans b:- 
+     import java.util.*;
+     class Acad
+     {
+       
+       public static void main(String []args)  //main method
+       {
+          Scanner sc = new Scanner(System.in);
+         int a = sc.nextInt();        // take input at runtime
+         int b = sc.nextInt();
+         int sum = a+b;  
+         System.out.println(sum);   //print sum 
+        }
+      }
+      
+Ans c:- 
+      import java.util.*;     //import package
+     class Acad    
+     {             
+         public static void sum(int a,int b)    //method sum  
+         {       
+            int sum;        
+            sum = a+b;       
+            System.out.println("Sum is:"+sum);     //print sum 
+            }        
+            public static void main(String []args)         //main mmethod    
+            {               
+              Scanner sc = new Scanner(System.in);            
+              int a = sc.nextInt();                   
+              int b = sc.nextInt();  
+              System.out.println("First number is:"+a);    //print
+              System.out.println("Second number is:"+b);
+              sum(a,b);            
+              }      
+       }  
+       
+Ans d:- 
+      import java.util.*;     //import package
+     class Acad    
+     {             
+         public static void main(String []args)
+         {
+        	 Scanner sc = new Scanner(System.in);
+        	 int a = sc.nextInt();                //input number
+        	 int b = sc.nextInt();
+        	 int []e = new int[Math.abs(b-a)];    //array declaration
+        	 int []o = new int[Math.abs(b-a)];
+        	 int e1=0,o1=0;
+        	 for(int i=a+1;i<b;i++)
+        	 {
+        		 if(i%2==0)          //condition for checking even
+        		 {
+        			 e[e1]=i;
+        			 e1++;
+        		 }
+        		 else              //else condition for odd checking
+        		 {
+        			 o[o1]=i;
+        			 o1++;
+        		 }
+        	 }
+        	 System.out.println("Even");     //print even number
+        	 for(int i=0;i<e1;i++)
+        	 {
+        		 System.out.println(e[i]);
+        	 }
+        	 System.out.println("odd");        //print odd number
+        	 for(int i=0;i<o1;i++)
+        	 {
+        		 System.out.println(o[i]);
+        	 }
+         }
+       }          
+       
+Ans e:-
+      import java.util.*;     //import package
+     class Acad    
+     {             
+         public static void main(String []args)
+         {
+        	 Scanner sc = new Scanner(System.in);
+        	 int a = sc.nextInt();                //input number
+        	 for(int i=1;i<=10;i++)      //for loop
+        	 {
+        		 System.out.println(a+"*"+i+" = "+(a*i));  //print
+        	 }
+         }
+       }          
+       
+Ans f:-
+     import java.util.*;     //import package
+     class Acad    
+     {     
+    	 public void sum(int a,int b)     // method sum 1
+    	 {
+    		 int sum = a+b;
+    		 System.out.println("method with two argument call");
+    		 System.out.println(sum);
+    	 }
+    	 public void sum(int a,int b,int c)       // 2 method overloading with same name and different signature
+    	 {
+    		 int sum = a+b+c;
+    		 System.out.println("method with three argument call");
+    		 System.out.println(sum);
+    	 }
+         public static void main(String []args)
+         {
+        	 Scanner sc = new Scanner(System.in);
+        	int x = sc.nextInt();        //input numbers 
+        	int y = sc.nextInt();
+        	int z = sc.nextInt();
+        	Acad ac = new Acad();   //create object of class
+        	ac.sum(x, y);         //calling method 1
+        	ac.sum(x,y,z);       // calling method 2
+        	
+        	
+       }   
+     }
+     
+Ans g:- 
+       Yes we can overload the method with same return type .
+       Code is given as under 
+       import java.util.*;     //import package
+     class Acad    
+     {     
+    	 public int sum(int a,int b)     // method sum 1
+    	 {
+    		 int sum = a+b;
+    		 
+    		 return sum;
+    	 }
+    	 public int sum(int a,int b,int c)       // 2 method overloading with same name and different signature
+    	 {                                        //Both sum  method has same return type int 
+    		 int sum = a+b+c;
+    		 
+    		 return sum ;
+    	 }
+         public static void main(String []args)
+         {
+        	 Scanner sc = new Scanner(System.in);
+        	int x = sc.nextInt();        //input numbers 
+        	int y = sc.nextInt();
+        	int z = sc.nextInt();
+        	Acad ac = new Acad();   //create object of class
+        	System.out.println(ac.sum(x, y));         //calling method 1
+        	System.out.println(ac.sum(x,y,z));       // calling method 2
+        	
+        	
+       }   
+     }
+     
+Ans h:- 
+     import java.util.*;     //import package
+     class Acad    
+     { 
+         public static void main(String []args)
+         {   
+        	 int temp=0;
+        	 Scanner sc = new Scanner(System.in);
+        	 System.out.println("Enter the number of element u wants to enter in your array");
+        	int n = sc.nextInt();   //input number of elements in array
+        	int a[] = new int[n];   //array declaration 
+        	for(int i=0;i<n;i++)
+        	{
+        		a[i] = sc.nextInt();     //input array elements 
+        	}
+        	for (int i = 0; i < n; i++) 
+            {
+                for (int j = i + 1; j < n; j++) 
+                {
+                    if (a[i] < a[j])          //condition for sorting the array in descending order 
+                    {
+                        temp = a[i];          //swapping the elements 
+                        a[i] = a[j];
+                        a[j] = temp;
+                    }
+                }
+            }
+            System.out.print("Descending Order:");
+            for (int i = 0; i < n - 1; i++) 
+            {
+                System.out.print(a[i] + ",");       //print array 
+            }
+            System.out.print(a[n - 1]);
+        }
+    
+        	
+       }   
+     
+       
